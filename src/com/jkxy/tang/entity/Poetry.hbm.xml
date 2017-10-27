@@ -1,0 +1,21 @@
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.jkxy.tang.entity.Poetry" table="poetries">
+		<!-- 生成对象唯一的OID标识符 -->
+		<id name="id" column="id" type="integer">
+			<generator class="native"/>
+		</id>
+	
+		<many-to-one name="poet" column="poet_id"></many-to-one>
+		<property name="content" type="string"/>
+		<property name="title" type="string"/>
+		<property name="created_at" type="timestamp"/> 
+		<property name="updated_at" type="timestamp"/>
+
+		
+	</class>
+
+</hibernate-mapping>
